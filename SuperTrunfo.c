@@ -66,11 +66,32 @@
 
   printf ("A segunda cidade tem quantos pontos turísticos? ");
   scanf ("%d", &turistico2);
-  
+
+
+//Saída de dados/exibição da carta 1:
+
+printf ("A letra escolhida  para a carta 1 foi: %c\n", estado1);
+printf ("A letra e código escolhidos para a carta 1 foram: %s\n", codigo1);
+printf ("Cidade: %s\n", nomecidade1);
+printf ("Habitantes: %d\n", populacao1);
+printf ("Área: %.2f\n", area1);
+printf ("PIB: %.2f\n", pib1);
+printf ("Pontos turísticos: %d", turistico1);
+
+
+//Saída de dados/exibição da carta 2:
+
+printf ("A letra escolhida  para a carta 2 foi: %c\n", estado2);
+printf ("A letra e código escolhidos para a carta 2 foram: %s\n", codigo2);
+printf ("Cidade: %s\n", nomecidade2);
+printf ("Habitantes: %d\n", populacao2);
+printf ("Área: %.2f\n", area2);
+printf ("PIB: %.2f\n", pib2);
+printf ("Pontos turísticos: %d", turistico2);
+
+
+
 
   return 0;
-
-
-
 
 }
