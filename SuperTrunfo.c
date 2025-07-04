@@ -10,7 +10,7 @@
    float pib1;
    int turistico1;
    float densidade1;
-
+   float pib_per_capita1;
 
 
 // Variáveis referentes à carta 2:
@@ -22,10 +22,29 @@
    float pib2;
    int turistico2;
    float densidade2;
-   float pib_per_capita1;
    float pib_per_capita2;
 
+// Variável para inversão da densidade populacional:
+   float densidadeinvertida1;
+   float densidadeinvertida2;
 
+// váriaveis de resultado das comparações:
+   int resultado_populacao;
+   int resultado_area;
+   int resultado_pib;
+   int resultado_turistico;
+   int resultado_densidade;
+   int resultado_pib_per_capita;
+
+// Variável para a declaração do super poder:
+   double super_poder1;
+   double super_poder2;
+   
+
+
+  // Entrada de dados em tela (carta 1):
+  printf ("Bem-vindo ao meu Super Trunfo super basicão!\n");
+  printf ("Vamos criar duas cartas para você jogar, e que vença o mais forte!\n");
 
 
 // Entrada de dados em tela (carta 1):
@@ -127,6 +146,37 @@ printf ("A densidade populacional de %s é: %.2f hab/km²\n", nomecidade2, densi
 printf ("O PIB per capita de %s é: %.2f reais\n", nomecidade2, pib_per_capita2);
 
 
+//variável para inversão da densidade populacional:
+  densidadeinvertida1 = (float) area1 / populacao1;
+  densidadeinvertida2 = (float) area2 / populacao2;
+
+
+/*Lembrete - comparação das cartas: é necessário comparar os valores de: população, 
+área, PIB, pontos turísticos, densidade populacional invertida e PIB per capita*/
+
+// Atribuindo os calculos às variáveis de resultado das comparações:
+resultado_populacao = populacao1 > populacao2;
+resultado_area = area1 > area2;
+resultado_pib = pib1 > pib2;
+resultado_turistico = turistico1 > turistico2;
+resultado_densidade = densidadeinvertida1 < densidadeinvertida2; // Invertendo a lógica para densidade
+resultado_pib_per_capita = pib_per_capita1 > pib_per_capita2;
+
+// Super poder:
+super_poder1 = (double) populacao1 + area1 + pib1 + turistico1 + densidadeinvertida1 + pib_per_capita1;
+super_poder2 = (double) populacao2 + area2 + pib2 + turistico2 + densidadeinvertida2 + pib_per_capita2;
+
+
+// Exibindo os resultados das comparações:
+printf("População: a cidade %s venceu\n", resultado_populacao ? nomecidade1 : nomecidade2);
+printf("Área: a cidade %s venceu\n", resultado_area ? nomecidade1 : nomecidade2);
+printf("PIB: a cidade %s venceu\n", resultado_pib ? nomecidade1 : nomecidade2);
+printf("Pontos turísticos: a cidade %s venceu\n", resultado_turistico ? nomecidade1 : nomecidade2);
+printf("Densidade populacional: a cidade %s venceu\n", resultado_densidade ? nomecidade1 : nomecidade2);
+printf("PIB per capita: a cidade %s venceu\n", resultado_pib_per_capita ? nomecidade1 : nomecidade2);
+printf("Super poder: A cidade %s venceu com super poder de %.lf\n", 
+       super_poder1 > super_poder2 ? nomecidade1 : nomecidade2, 
+       super_poder1 > super_poder2 ? super_poder1 : super_poder2);
 
   return 0;
 
